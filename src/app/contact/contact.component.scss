@@ -1,0 +1,9 @@
+@import "tailwindcss";
+.contact {
+  .contact-link {
+    @apply block p-2 rounded-lg border border-sky-200;
+    span {
+      @apply ms-3;
+    }
+  }
+}

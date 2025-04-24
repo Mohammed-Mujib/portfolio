@@ -1,0 +1,13 @@
+@import "tailwindcss";
+.nav-link {
+  @apply transition duration-300;
+}
+.nav-link:hover {
+  @apply text-emerald-400;
+  // @apply text-amber-500;
+}
+nav{
+  .active{
+    @apply text-emerald-400;
+  }
+}
