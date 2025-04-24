@@ -1,3 +1,30 @@
 <section class="projects">
-  <h1 class="page-heading">Contact</h1>
+  <h1 class="page-heading">Projects</h1>
+  <p>Here are some projects i build duaring my study</p>
+  <div class="mt-5 grid grid-cols-1 gap-3">
+    <div
+      *ngFor="let project of projects"
+      class="rounded-lg overflow-hidden bg-slate-900/40"
+    >
+      <div class="project-img-holder">
+        <a
+          href="{{ project.link }}"
+          target="_blank"
+          [class.cursor-pointer]="project.link"
+        >
+          <img src="{{ project.photo }}" alt="{{ project.name }} photo" class="w-full" />
+        </a>
+      </div>
+      <div class="project-content p-2">
+        <h3 class="text-xl my-2 capitalize">{{ project.name }}</h3>
+        <div class="space-x-1 space-y-1">
+          <small
+            *ngFor="let skill of project.skills"
+            class="inline-block px-2 py-0.5 bg-emerald-600 text-white rounded-lg text-sm"
+            >{{ skill }}
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
