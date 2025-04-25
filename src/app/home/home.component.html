@@ -1,39 +1,82 @@
-<section class="hero">
-  <h1 class="text-2xl text-center font-bold">Mohammed Mujeeb</h1>
-  <div class="my-2">
-    <img src="assets/avatar_images/file_0000000029c86246a1f201ab2b9eb5d4.png" alt="" class=" rounded-lg w-1/2 mx-auto">
+<section class="hero md:grid md:grid-cols-3">
+  <h1 class="text-2xl text-center font-bold md:col-span-3  md:text-6xl font-M-Plus-Rounded-1c">
+    Mohammed Mujeeb
+  </h1>
+  <h2 class=" text-center text-2xl lg:text-6xl mb-10  md:col-span-3 font-M-Plus-Rounded-1c mt-1">Full stack developer</h2>
+
+  <div class="col-span-1 p-2">
+    <div class="my-2 md:my-0">
+      <img
+        src="assets/avatar_images/file_0000000029c86246a1f201ab2b9eb5d4.png"
+        alt=""
+        class="rounded-lg w-1/2 md:w-full mx-auto"
+      />
+    </div>
+
+    <div class="heading text-center mb-8">
+      <!-- <h2 class="text-2xl lg:text-6xl">Full stack developer</h2> -->
+      <h3 class="text-emerald-400 lg:text-xl lg:p-4 font-light">
+        <i class="fa-solid fa-location-dot"></i> {{ location }}
+      </h3>
+    </div>
   </div>
-  <div class="heading text-center mb-8">
-    <h2 class=" text-2xl">Full stack developer</h2>
-    <h3 class=" text-emerald-400"><i class="fa-solid fa-location-dot"></i> {{location}}</h3>
-  </div>
-  <div class="curly-content p-2 w-11/12 mx-auto space-y-2">
-    <p>Just a guy who loves to code.</p>
-    <p>When do I love to code?</p>
-    <h3>When ...</h3>
-    <ul class="mx-auto w-9/12">
-      <li><span>I</span> Dont have bugs in my code.</li>
-      <li><span>I</span> Fixed a bug.</li>
-      <li><span>I'm</span> Getting payed <span><i class="fa-solid fa-sack-dollar"></i></span> for it.</li>
-    </ul>
-    <p>With technology embedded in me I realized that I hate bugs <i class="fa-solid fa-bug text-red-500"></i>, so should you. </p>
-    <a
-      href="assets/files/Mohammed-Mujeeb-resume.pdf"
-      download="Mohammed-Mujeeb-Resume.pdf"
-      class="px-10 mx-auto mt-5 w-fit block py-2 bg-emerald-400 text-sky-50 font-bold text-xl rounded-full transition duration-300 hover:bg-emerald-500 ">
-      Resume
-    </a>
+
+  <div class="md:col-span-2 p-2">
+    <div
+      class="curly-content p-2 md:pt-3 w-11/12 md:w-full mx-auto space-y-2 lg:text-2xl"
+    >
+      <div class="md:px-5 md:pt-2 lg:p-5">
+        <p>Just a guy who loves to code.</p>
+        <p>When do I love to code?</p>
+        <h3>When ...</h3>
+        <ul class="mx-auto w-9/12">
+          <li><span>I</span> Dont have bugs in my code.</li>
+          <li><span>I</span> Fix a bug.</li>
+          <li>
+            <span>I'm</span> Getting payed
+            <span><i class="fa-solid fa-sack-dollar"></i></span> for it.
+          </li>
+        </ul>
+        <p class="lg:mt-5">
+          With technology embedded in me I realized that I hate bugs
+          <i class="fa-solid fa-bug text-red-500"></i>, so should you.
+        </p>
+        <!-- <a
+          href="assets/files/Mohammed-Mujeeb-resume.pdf"
+          download="Mohammed-Mujeeb-Resume.pdf"
+          class="px-10 mx-auto mt-5 w-fit block py-2 bg-emerald-400 text-sky-50 font-bold text-xl rounded-full transition duration-300 hover:bg-emerald-500"
+        >
+          Resume
+        </a> -->
+      </div>
+    </div>
+    <div>
+      <a
+        href="assets/files/Mohammed-Mujeeb-resume.pdf"
+        download="Mohammed-Mujeeb-Resume.pdf"
+        class="px-10 mx-auto mt-5 w-full text-center block py-2 bg-emerald-400 text-sky-50 font-bold text-xl rounded-lg transition duration-300 hover:bg-emerald-500"
+      >
+        Resume
+      </a>
+    </div>
   </div>
 </section>
 
 <section class="skills">
   <div class="heading mb-5">
     <h2 class="section-headline !mb-0">Skills</h2>
-    <small class=" font-extralight text-sky-200">Despite having only one leg I managed to come all the way, step by step.</small>
+    <small class="font-extralight text-sky-200 md:text-xl"
+      >Despite having only one leg I managed to come all the way, step by
+      step.</small
+    >
   </div>
-  <div class=" grid grid-cols-2 gap-3">
-    <div class="p-4 border border-sky-100 rounded-lg flex space-x-3 items-center col-span-1" *ngFor="let skill of skills">
-      <img src="{{skill.icon}}"  alt="" class="w-10"> <span>{{skill.name}}</span>
+  <div class="grid grid-cols-2 gap-3">
+    <div
+      class="p-4 border border-sky-100 rounded-lg flex space-x-3 items-center col-span-1"
+      *ngFor="let skill of skills"
+    >
+      <img src="{{ skill.icon }}" alt="" class="w-10" />
+      <span class="md:text-xl">{{ skill.name }}</span>
     </div>
   </div>
 </section>
@@ -42,15 +85,19 @@
   <h2 class="section-headline">Education</h2>
 </section> -->
 
-<section class="my-10 p-2 mx-auto w-10/12 ">
-  <ul class="curly-content p-3 space-y-2">
+<section class="my-10 p-2 mx-auto w-10/12 md:min-w-6/12 md:text-xl">
+  <ul class="curly-content p-3 space-y-2 w-fit mx-auto md:px-10">
     <li>You got <span>5</span> points for reading it all</li>
-    <li><span>4</span> for the visit </li>
+    <li><span>4</span> for the visit</li>
     <li>That's a solid <span> 9/10</span></li>
     <li>The <span> only point</span> you're missing?</li>
-    <li>Me on your payroll.
-        <a routerLink="contact"
-          class="text-emerald-400 inline-block hover:text-sky-400 transition duration-100">Contact</a>
+    <li>
+      Me on your payroll.
+      <a
+        routerLink="contact"
+        class="text-emerald-400 inline-block hover:text-sky-400 transition duration-100"
+        >Contact</a
+      >
     </li>
   </ul>
 </section>

@@ -4,13 +4,20 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, HomeComponent, ContactComponent, ProjectsComponent],
+  imports: [
+    RouterOutlet,
+    NavbarComponent,
+    HomeComponent,
+    ContactComponent,
+    ProjectsComponent,
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'Mohammed Mujeeb';

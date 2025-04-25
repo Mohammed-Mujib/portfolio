@@ -15,106 +15,24 @@
   // fonts
   --font-Zen-Maru-Gothic: "Zen Maru Gothic", serif;
   --font-M-Plus-Rounded-1c: "M PLUS Rounded 1c", sans-serif;
-  /* Ghibli Forest */
-  --ghibli-forest-100: #e7ede5;
-  --ghibli-forest-200: #cfdacc;
-  --ghibli-forest-300: #b8c8b2;
-  --ghibli-forest-400: #a0b599;
-  --ghibli-forest-500: #88a37f;
-  --ghibli-forest-600: #6d8266;
-  --ghibli-forest-700: #52624c;
-  --ghibli-forest-800: #364133;
-  --ghibli-forest-900: #1b2119;
-
-  /* Ghibli Sun */
-  --ghibli-sun-100: #fff7e6;
-  --ghibli-sun-200: #fff0cd;
-  --ghibli-sun-300: #ffe8b5;
-  --ghibli-sun-400: #ffe19c;
-  --ghibli-sun-500: #ffd983;
-  --ghibli-sun-600: #ccae69;
-  --ghibli-sun-700: #99824f;
-  --ghibli-sun-800: #665734;
-  --ghibli-sun-900: #332b1a;
-
-  /* Ghibli Petal */
-  --ghibli-petal-100: #fcf3f3;
-  --ghibli-petal-200: #fae6e6;
-  --ghibli-petal-300: #f7dada;
-  --ghibli-petal-400: #f5cdcd;
-  --ghibli-petal-500: #f2c1c1;
-  --ghibli-petal-600: #c29a9a;
-  --ghibli-petal-700: #917474;
-  --ghibli-petal-800: #614d4d;
-  --ghibli-petal-900: #302727;
-
-  /* Ghibli Stone */
-  --ghibli-stone-100: #f6f5f3;
-  --ghibli-stone-200: #edece7;
-  --ghibli-stone-300: #e5e2dc;
-  --ghibli-stone-400: #dcd9d0;
-  --ghibli-stone-500: #d3cfc4;
-  --ghibli-stone-600: #a9a69d;
-  --ghibli-stone-700: #7f7c76;
-  --ghibli-stone-800: #54534e;
-  --ghibli-stone-900: #2a2927;
-
-  /* Ghibli Spirit */
-  --ghibli-spirit-100: #fefefc;
-  --ghibli-spirit-200: #fcfcfa;
-  --ghibli-spirit-300: #fbfbf7;
-  --ghibli-spirit-400: #f9f9f5;
-  --ghibli-spirit-500: #f8f8f2;
-  --ghibli-spirit-600: #c6c6c2;
-  --ghibli-spirit-700: #959591;
-  --ghibli-spirit-800: #636361;
-  --ghibli-spirit-900: #323230;
-
-  /* Ghibli Night */
-  --ghibli-night-100: #d5d7dc;
-  --ghibli-night-200: #abaeb9;
-  --ghibli-night-300: #828697;
-  --ghibli-night-400: #585d74;
-  --ghibli-night-500: #2e3551;
-  --ghibli-night-600: #252a41;
-  --ghibli-night-700: #1c2031;
-  --ghibli-night-800: #121520;
-  --ghibli-night-900: #090b10;
-
-  /* Ghibli Flame */
-  --ghibli-flame-100: #fcdedd;
-  --ghibli-flame-200: #fabebb;
-  --ghibli-flame-300: #f79d98;
-  --ghibli-flame-400: #f57d76;
-  --ghibli-flame-500: #f25c54;
-  --ghibli-flame-600: #c24a43;
-  --ghibli-flame-700: #913732;
-  --ghibli-flame-800: #612522;
-  --ghibli-flame-900: #301211;
-
-  /* Sky */
-  --ghibli-sky-100: #ecf7fc;
-  --ghibli-sky-200: #d9eff9;
-  --ghibli-sky-300: #c6e8f5;
-  --ghibli-sky-400: #b3e0f2;
-  --ghibli-sky-500: #a0d8ef;
-  --ghibli-sky-600: #80adbf;
-  --ghibli-sky-700: #60828f;
-  --ghibli-sky-800: #405660;
-  --ghibli-sky-900: #202b30;
 }
 
 body{
+  font-family: var(--font-Zen-Maru-Gothic);
+}
+.font-Zen-Maru-Gothic{
+  font-family: var(--font-Zen-Maru-Gothic);
+}
+.font-M-Plus-Rounded-1c{
   font-family: var(--font-M-Plus-Rounded-1c);
 }
-
 .page-heading{
-  @apply text-4xl font-bold py-2 ;
+  @apply text-4xl font-bold py-2 text-emerald-300;
   // @apply text-4xl font-bold py-2 border-b border-b-sky-100;
 }
 
 .section-headline{
-  @apply text-2xl font-bold py-2 my-2;
+  @apply text-2xl font-bold py-2 my-2 lg:text-4xl text-emerald-300;
 }
 
 section{

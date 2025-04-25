@@ -1,12 +1,12 @@
 <section class="projects">
   <h1 class="page-heading">Projects</h1>
-  <p>Here are some projects i build duaring my study</p>
-  <div class="mt-5 grid grid-cols-1 gap-3">
+  <p class="md:text-xl">Here are some projects i build duaring my study</p>
+  <div class="my-10 pb-10 grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-y-10">
     <div
       *ngFor="let project of projects"
       class="rounded-lg overflow-hidden bg-slate-900/40"
     >
-      <div class="project-img-holder">
+      <div class="project-img-holder" *ngIf="project.link; else NoLink">
         <a
           href="{{ project.link }}"
           target="_blank"
@@ -15,6 +15,9 @@
           <img src="{{ project.photo }}" alt="{{ project.name }} photo" class="w-full" />
         </a>
       </div>
+      <ng-template #NoLink>
+        <img src="{{ project.photo }}" alt="{{ project.name }} photo" class="w-full" />
+      </ng-template>
       <div class="project-content p-2">
         <h3 class="text-xl my-2 capitalize">{{ project.name }}</h3>
         <div class="space-x-1 space-y-1">

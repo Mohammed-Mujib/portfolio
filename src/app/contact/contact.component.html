@@ -1,20 +1,26 @@
-<section class="contact">
+<section class="contact  mx-auto">
   <h1 class="page-heading">Contact</h1>
-  <div class="grid grid-cols-1 mt-10 gap-3">
-    <a href="linkedin.com/in/mohammed-mujeeb-alrhman" target="_blank" class="contact-link">
+  <div class="grid grid-cols-1 mt-10 gap-3 mx-auto
+              md:grid-cols-5 md:grid-rows-6">
+    <a href="linkedin.com/in/mohammed-mujeeb-alrhman" target="_blank" class="contact-link md:col-span-3 md:row-span-2">
       <i class="fa-brands fa-linkedin-in"></i><span>Linkedin</span>
     </a>
-    <a href="https://github.com/Mohammed-Mujib" target="_blank" class="contact-link">
+    <a href="https://github.com/Mohammed-Mujib" target="_blank" class="contact-link md:row-span-4 md:col-span-2 md:h-80">
       <i class="fa-brands fa-github"></i><span>Github</span>
     </a>
-    <a href="wadmujib@gmail.com" target="_blank" class="contact-link">
+    <a href="wadmujib@gmail.com" target="_blank" class="contact-link md:row-span-4 md:col-span-2">
       <i class="fa-solid fa-envelope"></i><span>Email</span>
     </a>
-    <!-- <a href="" target="_blank" class="contact-link">
+    <!-- <a href="" target="_blank" class="contact-link md:col-span-1 md:row-span-2">
       <i class="fa-brands fa-whatsapp"></i><span>Whatsapp</span>
     </a> -->
-    <a href="t.me/Mohammed_Mujeeb" target="_blank" class="contact-link">
+    <a href="t.me/Mohammed_Mujeeb" target="_blank" class="contact-link md:col-span-3 md:row-span-2">
       <i class="fa-solid fa-paper-plane"></i><span>Telegram</span>
     </a>
   </div>
 </section>
+
+<!-- <div>
+      <button (click)="toggle()">Toggle Box</button>
+      <div *ngIf="visible" @fade class="box"></div>
+</div> -->
