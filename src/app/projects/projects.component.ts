@@ -13,7 +13,7 @@ export class ProjectsComponent {
     {
       name: 'MangaHala',
       photo: 'assets/projects_screenshot/manga-halan.png',
-      skills: ['HTML', 'CSS', 'tailwindcss', 'php', 'laravel'],
+      skills: ['HTML', 'CSS', 'tailwindcss','JavaScript', 'php', 'Laravel'],
       link: '',
     },
     {
@@ -26,7 +26,7 @@ export class ProjectsComponent {
         'Typescript',
         'Angular',
         'Python',
-        'django',
+        'Django',
       ],
       link: '',
     },
@@ -57,7 +57,7 @@ export class ProjectsComponent {
     {
       name: 'Travela',
       photo: 'assets/projects_screenshot/travela.png',
-      skills: ['HTML', 'CSS', 'bootstrap'],
+      skills: ['HTML', 'CSS', 'Bootstrap'],
       link: 'https://mohammed-mujib.github.io/Travela/',
     },
     {

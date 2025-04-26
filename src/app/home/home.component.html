@@ -1,8 +1,18 @@
 <section class="hero md:grid md:grid-cols-3">
-  <h1 class="text-2xl text-center font-bold md:col-span-3  md:text-6xl font-M-Plus-Rounded-1c">
-    Mohammed Mujeeb
-  </h1>
-  <h2 class=" text-center text-2xl lg:text-6xl mb-10  md:col-span-3 font-M-Plus-Rounded-1c mt-1">Full stack developer</h2>
+  <div class="font-M-Plus-Rounded-1c md:col-span-3 flex flex-col items-center">
+    <h1
+      class="cursor-pointer text-2xl text-emerald-300 text-center uppercase font-extrabold md:col-span-3 md:text-6xl w-fit"
+      (mouseover)="lettersFlow()"
+    >
+      <a routerLink="">{{ myName }}</a>
+    </h1>
+    <h2
+      class="text-center text-2xl lg:text-6xl mb-10 md:col-span-3 mt-1  w-fit"
+      (mouseover)="jobSwap()"
+    >
+      {{ jobtitle }}
+    </h2>
+  </div>
 
   <div class="col-span-1 p-2">
     <div class="my-2 md:my-0">
@@ -88,9 +98,9 @@
 <section class="my-10 p-2 mx-auto w-10/12 md:min-w-6/12 md:text-xl">
   <ul class="curly-content p-3 space-y-2 w-fit mx-auto md:px-10">
     <li>You got <span>5</span> points for reading it all</li>
-    <li><span>4</span> for the visit</li>
+    <li><span>4</span> points for the visit</li>
     <li>That's a solid <span> 9/10</span></li>
-    <li>The <span> only point</span> you're missing?</li>
+    <li>The <span> only point</span> you're missing <span>?</span></li>
     <li>
       Me on your payroll.
       <a
