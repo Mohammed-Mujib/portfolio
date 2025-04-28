@@ -37,6 +37,8 @@ export class HomeComponent implements AfterViewInit {
   isTouchImg: boolean = false;
   degrees: number = 0;
   progressInterval: any = null;
+  imgPopup: boolean = false;
+  popupText: string = '';
 
   lettersFlow() {
     let count: number = 1;
@@ -96,6 +98,7 @@ export class HomeComponent implements AfterViewInit {
       this.progressInterval = setInterval(() => {
         if (this.degrees >= 360) {
           this.clearProgress();
+          this.activePopup();
         } else {
           this.degrees += 3;
         }
@@ -112,6 +115,7 @@ export class HomeComponent implements AfterViewInit {
       this.progressInterval = setInterval(() => {
         if (this.degrees <= 0) {
           this.clearProgress();
+          this.deactivePopup();
         } else {
           this.degrees -= 3;
         }
@@ -125,6 +129,21 @@ export class HomeComponent implements AfterViewInit {
       clearInterval(this.progressInterval);
       this.progressInterval = null;
     }
+  }
+
+  activePopup() {
+    this.imgPopup = true;
+    this.popupText = '80% Human';
+    setTimeout(() => {
+      this.popupText = '20% Machine';
+    }, 1100);
+    setTimeout(() => {
+      this.popupText = 'Just the creativity and technology needed for the job';
+    }, 2200);
+  }
+  deactivePopup(){
+    this.imgPopup = false;
+    this.popupText = '';
   }
 
   ngAfterViewInit(): void {

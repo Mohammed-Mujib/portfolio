@@ -16,7 +16,7 @@
 
   <div class="col-span-1 p-2">
     <div
-      class="my-2 md:my-0 p-1 rounded-lg bg-sky-950 w-1/2 md:w-auto mx-auto"
+      class="my-2 md:my-0 p-1 rounded-lg bg-sky-950 w-1/2 md:w-auto mx-auto relative overflow-hidden"
       [style.background]="
         'conic-gradient(#059669 ' + degrees + 'deg, #0c4a6e 0deg)'
       "
@@ -28,6 +28,12 @@
         alt=""
         class="rounded-lg w-full md:w-full mx-auto"
       />
+      <div
+        class="absolute top-0 left-0 bottom-0 w-full flex justify-center items-center"
+        [class.hidden]="!imgPopup"
+      >
+        <h3 class="text-lg md:text-4xl font-extrabold p-2 text-center text-emerald-300">{{ popupText }}</h3>
+      </div>
     </div>
 
     <div class="heading text-center mb-8">
@@ -39,7 +45,7 @@
 
   <div class="md:col-span-2 p-2">
     <div
-      class="curly-content p-2 md:pt-3 w-11/12 md:w-full mx-auto space-y-2 lg:text-2xl"
+      class="curly-content p-2  w-11/12 md:w-full mx-auto space-y-2 lg:text-2xl"
     >
       <div class="md:px-5 md:pt-2 lg:p-5">
         <p>Just a guy who loves to code.</p>
