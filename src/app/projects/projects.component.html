@@ -21,10 +21,10 @@
       </ng-template>
       <div class="project-content p-3">
         <h3 class="text-xl my-2 capitalize">{{ project.name }}</h3>
-        <div class="space-x-1 space-y-1">
+        <div class="">
           <small
             *ngFor="let skill of project.skills"
-            class="inline-block px-2 py-0.5 bg-emerald-600 text-white rounded-lg text-sm capitalize"
+            class="inline-block px-2 py-0.5 bg-emerald-600 text-white rounded-lg text-sm capitalize m-1"
             >{{ skill }}
           </small>
         </div>

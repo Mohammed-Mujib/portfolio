@@ -1,1 +1,7 @@
-
+@import "tailwindcss";
+ul.curly-content li{
+  @apply mb-2;
+}
+.hero-content >*{
+  @apply mb-2;
+}
