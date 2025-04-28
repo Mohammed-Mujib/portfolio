@@ -1,7 +1,7 @@
 @import "tailwindcss";
 .contact {
   .contact-link {
-    @apply block p-2 md:p-4 md:text-6xl rounded-lg border border-sky-200 md:flex md:justify-center md:items-center;
+    @apply block p-2 md:p-4 md:text-6xl rounded-lg border border-sky-200 md:flex md:justify-center md:items-center transition duration-300;
     span {
       @apply ms-3 md:hidden;
     }

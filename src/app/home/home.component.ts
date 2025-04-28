@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { AfterContentInit, Component } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { match } from 'assert';
 
@@ -10,7 +10,7 @@ import { match } from 'assert';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent implements AfterContentInit {
+export class HomeComponent implements AfterViewInit {
   location: string = 'Egypt - Giza';
   jobTitels: string[] = ['Front-end developer', 'Back-end developer'];
   jobtitle: string = 'Full stack developer';
@@ -32,13 +32,16 @@ export class HomeComponent implements AfterContentInit {
   myName: string = 'Mohammed Mujeeb';
   conName: string = 'Mohammed Mujeeb';
   simples: string = 'qazwsxedcrfvtgbyhnujmikolp';
-  isTuchName: boolean = false;
-  isTuchJobTitle: boolean = false;
+  isTouchName: boolean = false;
+  isTouchJobTitle: boolean = false;
+  isTouchImg: boolean = false;
+  degrees: number = 0;
+  progressInterval: any = null;
 
   lettersFlow() {
     let count: number = 1;
-    if (!this.isTuchName) {
-      this.isTuchName = true;
+    if (!this.isTouchName) {
+      this.isTouchName = true;
       for (let i = this.conName.length - 1; i >= 0; i--) {
         setTimeout(() => {
           this.myName =
@@ -50,7 +53,7 @@ export class HomeComponent implements AfterContentInit {
       setTimeout(() => {
         this.myName = this.conName;
         count = 1;
-        this.isTuchName = false;
+        this.isTouchName = false;
       }, this.conName.length * 80);
     }
   }
@@ -64,8 +67,8 @@ export class HomeComponent implements AfterContentInit {
   }
 
   jobSwap() {
-    if (!this.isTuchJobTitle) {
-      this.isTuchJobTitle = true;
+    if (!this.isTouchJobTitle) {
+      this.isTouchJobTitle = true;
       let index = 0;
 
       for (let i = 0; i < 6; i++) {
@@ -79,10 +82,52 @@ export class HomeComponent implements AfterContentInit {
       setTimeout(() => {
         // console.log('ready--------------------------');
         this.jobtitle = 'Full stack developer';
-        this.isTuchJobTitle = false;
+        this.isTouchJobTitle = false;
       }, 6 * 500);
     }
   }
 
-  ngAfterContentInit(): void {}
+  // Activate when mouse hover
+  progressBarForward() {
+    if (!this.isTouchImg) {
+      this.isTouchImg = true;
+      this.clearProgress(); // Clear any existing intervals
+
+      this.progressInterval = setInterval(() => {
+        if (this.degrees >= 360) {
+          this.clearProgress();
+        } else {
+          this.degrees += 3;
+        }
+      }, 10);
+    }
+  }
+
+  // Activate when mouse leave
+  progressBarBackward() {
+    if (this.isTouchImg) {
+      this.isTouchImg = false;
+      this.clearProgress(); // Clear any existing intervals
+
+      this.progressInterval = setInterval(() => {
+        if (this.degrees <= 0) {
+          this.clearProgress();
+        } else {
+          this.degrees -= 3;
+        }
+      }, 10);
+    }
+  }
+
+  // Helper function to clear interval
+  clearProgress() {
+    if (this.progressInterval) {
+      clearInterval(this.progressInterval);
+      this.progressInterval = null;
+    }
+  }
+
+  ngAfterViewInit(): void {
+    this.lettersFlow();
+  }
 }

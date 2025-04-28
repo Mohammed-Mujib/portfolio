@@ -62,3 +62,22 @@ section{
   }
 
 }
+.custom-scrollbar {
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #7dd3fc;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #34d399;
+    border-radius: 9999px;
+    border: 2px solid #7dd3fc;
+  }
+
+  scrollbar-width: thin;
+  scrollbar-color: #34d399 #7dd3fc;
+}
+

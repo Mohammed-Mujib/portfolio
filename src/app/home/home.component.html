@@ -7,7 +7,7 @@
       <a routerLink="">{{ myName }}</a>
     </h1>
     <h2
-      class="text-center text-2xl lg:text-6xl mb-10 md:col-span-3 mt-1  w-fit"
+      class="text-center text-2xl lg:text-6xl mb-10 md:col-span-3 mt-1 w-fit"
       (mouseover)="jobSwap()"
     >
       {{ jobtitle }}
@@ -15,16 +15,22 @@
   </div>
 
   <div class="col-span-1 p-2">
-    <div class="my-2 md:my-0">
+    <div
+      class="my-2 md:my-0 p-1 rounded-lg bg-sky-950 w-1/2 md:w-auto mx-auto"
+      [style.background]="
+        'conic-gradient(#059669 ' + degrees + 'deg, #0c4a6e 0deg)'
+      "
+      (mouseover)="progressBarForward()"
+      (mouseleave)="progressBarBackward()"
+    >
       <img
         src="assets/avatar_images/file_0000000029c86246a1f201ab2b9eb5d4.png"
         alt=""
-        class="rounded-lg w-1/2 md:w-full mx-auto"
+        class="rounded-lg w-full md:w-full mx-auto"
       />
     </div>
 
     <div class="heading text-center mb-8">
-      <!-- <h2 class="text-2xl lg:text-6xl">Full stack developer</h2> -->
       <h3 class="text-emerald-400 lg:text-xl lg:p-4 font-light">
         <i class="fa-solid fa-location-dot"></i> {{ location }}
       </h3>
@@ -51,15 +57,9 @@
           With technology embedded in me I realized that I hate bugs
           <i class="fa-solid fa-bug text-red-500"></i>, so should you.
         </p>
-        <!-- <a
-          href="assets/files/Mohammed-Mujeeb-resume.pdf"
-          download="Mohammed-Mujeeb-Resume.pdf"
-          class="px-10 mx-auto mt-5 w-fit block py-2 bg-emerald-400 text-sky-50 font-bold text-xl rounded-full transition duration-300 hover:bg-emerald-500"
-        >
-          Resume
-        </a> -->
       </div>
     </div>
+
     <div>
       <a
         href="assets/files/Mohammed-Mujeeb-resume.pdf"
@@ -75,7 +75,7 @@
 <section class="skills">
   <div class="heading mb-5">
     <h2 class="section-headline !mb-0">Skills</h2>
-    <small class="font-extralight text-sky-200 md:text-xl"
+    <small class="font-extralight md:text-xl"
       >Despite having only one leg I managed to come all the way, step by
       step.</small
     >
@@ -90,10 +90,6 @@
     </div>
   </div>
 </section>
-
-<!-- <section class="education">
-  <h2 class="section-headline">Education</h2>
-</section> -->
 
 <section class="my-10 p-2 mx-auto w-10/12 md:min-w-6/12 md:text-xl">
   <ul class="curly-content p-3 space-y-2 w-fit mx-auto md:px-10">

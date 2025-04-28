@@ -1,7 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { AfterViewInit, Component, inject, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { trigger, transition, style, animate, AnimationStyleMetadata, AnimationKeyframesSequenceMetadata, AnimationAnimateMetadata } from '@angular/animations';
+import {
+  trigger,
+  transition,
+  style,
+  animate,
+  state,
+} from '@angular/animations';
 
 @Component({
   selector: 'app-contact',
@@ -20,16 +26,22 @@ import { trigger, transition, style, animate, AnimationStyleMetadata, AnimationK
     `,
   ],
   animations: [
-    trigger('fade', [
-      transition(':enter', [
-        style({ opacity: 0 }),
-        animate('300ms ease-out', style({ opacity: 1 })),
-      ]),
-      transition(':leave', [animate('300ms ease-in', style({ opacity: 0 }))]),
+    trigger('shows', [
+      state(
+        'hidden',
+        style({
+          opacity: 0,
+          position: 'relative',
+          transform: 'translateX(-40%)',
+        })
+      ),
+      state('visible', style({ opacity: 1, transform: 'translateX(0%)' })),
+      transition('hidden <=> visible', animate('300ms ease-out')),
     ]),
   ],
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit {
+  visible = false;
   contactlinks: any[] = [];
   private snaitizer = inject(DomSanitizer);
   constructor() {
@@ -51,10 +63,15 @@ export class ContactComponent {
         email: this.snaitizer.bypassSecurityTrustUrl('wadmujib@gmail.com'),
       },
     ];
-    // animate(500, style({ background: 'red' }));
+
+
   }
-  visible = true;
-  toggle() {
-    this.visible = !this.visible;
+
+  // linksVisable = false
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.visible = true;
+    }, 200);
   }
 }
