@@ -1,7 +1,18 @@
 @import "tailwindcss";
-ul.curly-content li{
+ul.curly-content li {
   @apply mb-2;
 }
-.hero-content >*{
+.hero-content > * {
   @apply mb-2;
 }
+// .sec-btn {
+//   @apply col-span-1 p-2 cursor-pointer font-mediim text-xl border-b border-b-slate-500 rounded-t-lg;
+// }
+// .eduaction_and_experiance{
+//   ul{
+//     li::after{
+//       content: "";
+//       @apply w-8 h-8 rounded-full bg-emerald-300 absulte top-1/2 -left-8 -translate-top-1/2;
+//     }
+//   }
+// }

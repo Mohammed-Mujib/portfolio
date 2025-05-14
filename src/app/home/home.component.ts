@@ -39,6 +39,20 @@ export class HomeComponent implements AfterViewInit {
   progressInterval: any = null;
   imgPopup: boolean = false;
   popupText: string = '';
+  education: boolean = true;
+  section_page: string = "education";
+
+  educationList: any = [
+    {
+      school: 'sudan international univercity ',
+      degree: ' Bachelor of Business Computing',
+    },
+    { school: 'MEC Academy ', degree: 'Front End Diploma' },
+    { school: 'MEC Academy ', degree: 'Back End Diploma' },
+  ];
+  experianceList: any = [
+    { place: ' SUSCloud', position: 'Front end developer' },
+  ];
 
   lettersFlow() {
     let count: number = 1;
@@ -111,11 +125,10 @@ export class HomeComponent implements AfterViewInit {
     if (this.isTouchImg) {
       this.isTouchImg = false;
       this.clearProgress(); // Clear any existing intervals
-
+      this.deactivePopup();
       this.progressInterval = setInterval(() => {
         if (this.degrees <= 0) {
           this.clearProgress();
-          this.deactivePopup();
         } else {
           this.degrees -= 3;
         }
@@ -141,9 +154,22 @@ export class HomeComponent implements AfterViewInit {
       this.popupText = 'Just the creativity and technology needed for the job';
     }, 2200);
   }
-  deactivePopup(){
+
+  deactivePopup() {
     this.imgPopup = false;
     this.popupText = '';
+  }
+
+  // educationActive() {
+  //   !this.education ? (this.education = !this.education) : '';
+  // }
+
+  // experianceActive() {
+  //   this.education ? (this.education = !this.education) : '';
+  // }
+
+  toggleSection(section: 'education' | 'experience') {
+    this.section_page = section;
   }
 
   ngAfterViewInit(): void {

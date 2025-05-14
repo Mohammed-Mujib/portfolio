@@ -1,3 +1,4 @@
+<!-- hero section start -->
 <section class="hero md:grid md:grid-cols-3">
   <div class="font-M-Plus-Rounded-1c md:col-span-3 flex flex-col items-center">
     <h1
@@ -32,7 +33,11 @@
         class="absolute top-0 left-0 bottom-0 w-full flex justify-center items-center"
         [class.hidden]="!imgPopup"
       >
-        <h3 class="text-lg md:text-4xl font-extrabold p-2 text-center text-emerald-300">{{ popupText }}</h3>
+        <h3
+          class="text-lg md:text-4xl font-extrabold p-2 text-center text-emerald-300"
+        >
+          {{ popupText }}
+        </h3>
       </div>
     </div>
 
@@ -43,9 +48,9 @@
     </div>
   </div>
 
-  <div class="md:col-span-2 p-2 ">
+  <div class="md:col-span-2 p-2">
     <div
-      class="curly-content p-2 hero-content  w-11/12 md:w-full mx-auto lg:text-2xl"
+      class="curly-content p-2 hero-content w-11/12 md:w-full mx-auto lg:text-2xl"
     >
       <div class="md:px-5 md:pt-2 lg:p-5">
         <p>Just a guy who loves to code.</p>
@@ -70,14 +75,16 @@
       <a
         href="assets/files/Mohammed-Mujeeb-resume.pdf"
         download="Mohammed-Mujeeb-Resume.pdf"
-        class="px-10 mx-auto mt-5 w-full text-center block py-2 bg-emerald-400 text-sky-50 font-bold text-xl rounded-lg transition duration-300 hover:bg-emerald-500"
+        class="px-10 mx-auto mt-5 w-full text-center block py-2 bg-emerald-400 text-sky-50 font-bold text-xl rounded-lg transition duration-300 hover:bg-emerald-600"
       >
         Resume
       </a>
     </div>
   </div>
 </section>
+<!-- hero section end -->
 
+<!-- skilss section start -->
 <section class="skills">
   <div class="heading mb-5">
     <h2 class="section-headline !mb-0">Skills</h2>
@@ -88,7 +95,7 @@
   </div>
   <div class="grid grid-cols-2 gap-3">
     <div
-      class="p-4 border border-sky-100 rounded-lg flex  items-center col-span-1"
+      class="p-4 border border-sky-100 rounded-lg flex items-center col-span-1"
       *ngFor="let skill of skills"
     >
       <img src="{{ skill.icon }}" alt="" class="w-10" />
@@ -96,7 +103,59 @@
     </div>
   </div>
 </section>
+<!-- skilss section end -->
 
+<!-- eduaction and experiance section start -->
+<section
+  class="eduaction_and_experiance p-2 bg-slate-900/40 rounded-lg h-70overflow-hidden"
+>
+  <nav class="grid grid-cols-2">
+    <button
+      class="col-span-1 p-2 cursor-pointer font-medium text-xl md:text-2xl border-b border-b-slate-500 rounded-t-lg transition duration-200"
+      (click)="toggleSection('education')"
+      [ngClass]="{
+        'text-emerald-300  bg-sky-950 !border-b-sky-950 !cursor-default':
+          section_page == 'education', 'hover:bg-emerald-400': section_page != 'education'
+      }"
+    >
+      Education
+    </button>
+    <button
+      class="col-span-1 p-2 cursor-pointer font-medium text-xl md:text-2xl border-b border-b-slate-500 rounded-t-lg transition duration-200"
+      (click)="toggleSection('experience')"
+      [ngClass]="{
+        'text-emerald-300  bg-sky-950 !border-b-sky-950 !cursor-default':
+          section_page == 'experience' , 'hover:bg-emerald-400':section_page != 'experience'
+      }"
+    >
+      Experience
+    </button>
+  </nav>
+  <div class="p-2 rounded-b-lg bg-sky-950 h-full">
+    <!-- <ul class="ps-8" *ngIf="education"> -->
+    <ul class="ps-8" *ngIf="section_page == 'education'">
+      <li
+        *ngFor="let edu of educationList"
+        class="text-slate-200 capitalize relative md:text-xl py-2 before:content-[''] before:w-2 before:h-2 before:rounded-full before:bg-emerald-300 before:absolute before:top-1/2 before:-left-5 before:-translate-y-1/2"
+      >
+        {{ edu.degree }} <span class="text-emerald-400 inline-block px-1">|</span> <span class="text-slate-400">{{edu.school}}</span>
+      </li>
+    </ul>
+
+    <!-- <ul class="ps-8" *ngIf="!education"> -->
+    <ul class="ps-8" *ngIf="section_page == 'experience'">
+      <li
+        *ngFor="let exp of experianceList"
+        class="text-slate-200 capitalize relative md:text-xl py-2 before:content-[''] before:w-2 before:h-2 before:rounded-full before:bg-emerald-300 before:absolute before:top-1/2 before:-left-5 before:-translate-y-1/2"
+      >
+        {{ exp.position }} <span class="text-emerald-400 inline-block px-1">|</span> <span class="text-slate-400">{{exp.place}}</span>
+      </li>
+    </ul>
+  </div>
+</section>
+<!-- eduaction and experiance section end -->
+
+<!-- action section start -->
 <section class="my-10 p-2 mx-auto w-10/12 md:min-w-6/12 md:text-xl">
   <ul class="curly-content p-3 w-fit mx-auto md:px-10">
     <li>You got <span>5</span> points for reading it all</li>
@@ -106,10 +165,11 @@
     <li>
       Me on your payroll.
       <a
-        routerLink="contact"
-        class="text-emerald-400 inline-block hover:text-sky-400 transition duration-100"
+        href="/portfolio/contact"
+        class="bg-emerald-400 inline-block transition duration-300 py-1 px-2 text-white rounded hover:bg-emerald-600"
         >Contact</a
       >
     </li>
   </ul>
 </section>
+<!-- action section end -->
